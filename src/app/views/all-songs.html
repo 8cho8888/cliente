@@ -1,0 +1,56 @@
+<!--
+<!-- Container -->
+<div class="container">
+
+    <!-- Main Content-->
+    <div class="masthead">
+        <ul class="pagination pull-right">
+            <li><a [routerLink]="['/all-songs', prev_page]">&laquo;</a></li>
+            <li><a [routerLink]="['/all-songs', next_page]">&raquo;</a></li>
+        </ul>
+        <div class="clearfix"></div>
+              
+  <input type="text" id="buscar" onkeyup="buscar()" placeholder="Buscar en tabla" title="Empieza a escribir para buscar">
+      
+      <div class="table-responsive">
+        <table class="table table-striped" id="tabla" data-sort="table" *ngIf="identity">
+            <thead>
+              <tr>
+                <th scope="col">image</th>
+                <th scope="col">Nombre Canción</th>
+                <th scope="col">Album</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Tags</th>
+                <th scope="col">Preview</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let song of songs">
+                <th scope="row">
+                    <div id="allSong-head-card">
+                        <div class="imagen">
+                            <img src="{{url+'get-image-artist/'+song.album.artist.image}}"alt="">
+                        </div>
+                        
+                    </div>
+                    </th>
+                <td>  <a class="btn btn-succes" (click)="startPlayer(song)">
+                  <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+              </a>{{song.name}}</td>
+                <td>{{song.album.title}}</td>
+                <td>{{song.album.artist.name}}</td>
+                <td>{{song.tags}}</td>
+                <td>
+                    <audio controls >
+                        <source  src="{{ url + 'get-song-file/'+song.file}}" type="audio/mpeg">
+                        Tu navegador no es compatible con HTML 5
+                    </audio>
+                </td>
+              </tr>
+            </tbody>
+          </table>        
+  </div>
+    </div>
+  </div>
+  <!-- /container -->

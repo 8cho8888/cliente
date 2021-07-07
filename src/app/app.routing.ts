@@ -15,10 +15,12 @@ import { AlbumDetailComponent } from './components/album-detail.component';
 //imports Song
 import { SongAddComponent } from './components/song-add.component';
 import { SongEditComponent } from './components/song-edit.component';
+import { AllSongsComponent } from './components/all-songs.component';
 
 
 const appRoutes: Routes = [ 
     {path: '', component: HomeComponent}, 
+    {path:'all-songs/:page',component:AllSongsComponent},
     {path: 'artistas/:page', component: ArtistListComponent},
     {path: 'crear-artista', component: ArtistAddComponent},
     {path: 'crear-album/:artist', component: AlbumAddComponent},
@@ -30,7 +32,7 @@ const appRoutes: Routes = [
     {path: 'editar-tema/:id', component: SongEditComponent},
     {path: 'mis-datos', component: UserEditComponent}, 
     {path: '**', component: HomeComponent},
-    
+      
 ]; 
 export const appRoutingProviders: any [] =[]; 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

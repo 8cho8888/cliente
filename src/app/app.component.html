@@ -1,19 +1,14 @@
 <div *ngIf="identity" class="navigation col-lg-1">
   <h1 class="head-title">
-    <a [routerLink]="['/']">
-      <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-
-    {{title}}
-      </a>
+    <a [routerLink]="['/']" [routerLinkActive]="['actived']">
+      <span  aria-hidden="true"></span>
+        <img src="../assets/images/sizart.PNG" alt="" height="85px" width="85px">
+        </a>
   </h1>
   <nav id="navigation">
-    <a href="#">
-      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-      Buscar
-    </a>
-    <a href="#">
+    <a [routerLink]="['/all-songs',1]"[routerLinkActive]="['actived']">
       <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-    Albums
+    Canciones
     </a>
     <a [routerLink]="['/artistas', 1]" [routerLinkActive]="['actived']" >
       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -48,6 +43,7 @@
  <div class="clearfix"></div>
  <player class="player" *ngIf="identity"></player>
 </div>
+
 
 <div class="col-lg-11" *ngIf="!identity">
   <div class="col-lg-6">

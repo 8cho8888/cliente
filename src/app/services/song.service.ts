@@ -61,6 +61,15 @@ export class SongService{
         }
   
     }
+    allSongs(token, page){
+        let headers =  new Headers({
+            'Content-Type':'application/json',
+            'Authorization': token
+        });
+        let options = new RequestOptions({ headers: headers});
+        return this._http.get(this.url + 'all-songs/' + page, options)
+                        .map(res => res.json());
+    }
    /* 
     getAlbums(token,artistId=null){
         let headers = new Headers({

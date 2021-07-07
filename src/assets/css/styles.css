@@ -1,4 +1,12 @@
 /*Global*/
+/*Responsive*/
+.contenedor{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.noTiene{display:none}
 html, body{
     margin: 0px;
     height: 100%;
@@ -88,9 +96,19 @@ background: #eee;
     float: left;
     margin-right: 30px;
 }
+#allSong-head-card .imagen{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    float: left;
+    margin-right: 30px;
+}
 #artist-head-card .image img,
 #album-head-card .image img{
     height: 170px;
+}
+#allSong-head-card .imagen img{
+height: 100px;
 }
 /*Artistas y albums*/
 .artist_image_for_edit img,
@@ -207,3 +225,10 @@ audio .player{
     width: 100%;
     height: 40px;
 }
+/*Buscar*/
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+   }
+  .short { width: 50px; }

@@ -23,7 +23,7 @@
                     <a class="btn btn-succes" (click)="startPlayer(song)">
                         <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                     </a>
-                    {{song.number+'.'+song.name+'-'+song.duration}}
+                    {{song.number+' . '+song.name+' - '+song.duration}}
                     <div  class="buttons" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
                         <a [routerLink]="['/editar-tema',song._id]" class="btn btn-warning">
                         Editar</a>

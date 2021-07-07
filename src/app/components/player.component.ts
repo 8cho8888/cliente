@@ -38,7 +38,7 @@ public url:string;
 public song;
 constructor(){
     this.url=GLOBAL.url;
-    this.song= new Song(1,"","","","");
+    this.song= new Song(1,"","","","","");
 }
     ngOnInit(){
     console.log('player cargado');
@@ -47,7 +47,7 @@ constructor(){
          this.song = song;
      }else{
          
-    this.song= new Song(1,"","","","");
+    this.song= new Song(1,"","","","","");
      }
 }
 }
